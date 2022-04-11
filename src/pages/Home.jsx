@@ -26,16 +26,16 @@ function Home() {
 	useEffect(() => {
 		dispatch(fetchPizzas(sortBy, category));
 
-	}, [category, sortBy])
+	}, [category, sortBy, dispatch])
 
 
 	const onSelectCategory = useCallback((index) => {
 		dispatch(setCategory(index));
-	}, []);
+	}, [dispatch]);
 
 	const onSelectSortType = useCallback((type) => {
 		dispatch(setSortBy(type));
-	}, []);
+	}, [dispatch]);
 
 	const handleAddPizzaToCart = obj => {
 		dispatch(addPizzaToCart(obj))
